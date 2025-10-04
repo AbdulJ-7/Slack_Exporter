@@ -1,4 +1,9 @@
-# Slack Complete Export & Markdown Transcript Toolkit
+# SExExport every accessible message from a Slack workspace (channels, private channels if you're a member, multi‑party DMs, one‑to‑one DMs — including those not currently visible in your sidebar) and optionally convert the resulting JSON into clean, date‑grouped Markdown transcripts.
+
+---
+## 🗂 Directory Layout (After Running Both Steps)essible message from a Slack workspace (channels, private channels if you're a member, multi‑party DMs, one‑to‑one DMs — including those not currently visible in your sidebar) and optionally convert the resulting JSON into clean, date‑grouped Markdown transcripts.
+
+--- Export & Markdown Transcript Toolkit
 
 Export every accessible message from a Slack workspace (channels, private channels if you're a [00:55:33] Bob: Hi Alice
 ```ber, multi‑party DMs, one‑to‑one DMs — including those not currently visible in your sidebar) and optionally convert the resulting JSON into clean, date‑grouped Markdown transcripts.
@@ -15,37 +20,23 @@ Export every accessible message from a Slack workspace (channels, private channe
 
 ---
 ## 🗂 Directory Layout (After Running Both Steps)
+
 ```
 exports/
-  channels/   <channel>.json
-  ims/        <display_name>_dm.json
-  groups/     mpdm-*.json
+  channels/
+    <channel>.json
+  ims/
+    <display_name>_dm.json
+  groups/
+    mpdm-*.json
   export_summary.json
 markdown/
-  channels/   <channel>.md
-  ims/        <display_name>_dm.md
-  groups/     mpdm-*.md
-```
-
----
-## 🚀 Quick Start (TL;DR)
-```bash
-# 1. Clone this repository
-git clone <repository-url>
-cd slackex
-
-# 2. Install dependencies
-pip install -r requirements.txt
-
-# 3. Set your token (recommended via .env)
-cp .env.example .env
-# Edit .env and replace 'xoxp-your-token-here' with your actual token
-
-# 4. Run the exporter
-python slack_export.py   # confirm with 'y'
-
-# 5. (Optional) Convert JSON to markdown
-python generate_md.py
+  channels/
+    <channel>.md
+  ims/
+    <display_name>_dm.md
+  groups/
+    mpdm-*.md
 ```
 
 ---
@@ -68,32 +59,70 @@ python generate_md.py
 (You can revoke the token or delete the app after exporting.)
 
 ---
-## 2. Environment Setup
-Ensure Python 3.9+ is installed.
+## 2. VS Code Setup & Workflow (Recommended)
 
-Clone this repository and install dependencies:
+### Prerequisites
+- Python 3.9+ installed
+- VS Code installed
+- Git installed
+
+### Setup Steps
+
+#### 1. Clone Repository
+**Windows (Command Prompt/PowerShell):**
+```cmd
+git clone https://github.com/AbdulJ-7/Slack_Exporter.git
+cd Slack_Exporter
+code .
+```
+
+**Mac/Linux (Terminal):**
 ```bash
-git clone <repository-url>
-cd slackex
+git clone https://github.com/AbdulJ-7/Slack_Exporter.git
+cd Slack_Exporter
+code .
+```
+
+#### 2. VS Code Setup
+1. VS Code will open the project folder
+2. Install the **Python extension** if prompted (or from Extensions marketplace)
+3. VS Code may prompt to create a virtual environment - **accept this recommendation**
+4. Open the **integrated terminal** (Terminal → New Terminal or `` Ctrl+` ``)
+
+#### 3. Install Dependencies
+**In VS Code terminal:**
+```bash
 pip install -r requirements.txt
 ```
 
-Create a `.env` file from the example:
+#### 4. Configure Environment
+**Windows (in VS Code terminal):**
+```cmd
+copy .env.example .env
+notepad .env
+```
+
+**Mac/Linux (in VS Code terminal):**
 ```bash
 cp .env.example .env
+open .env    # Mac
+# or
+nano .env    # Linux
 ```
-Then edit `.env` and replace `xoxp-your-token-here` with your actual Slack token.
 
-If you skip `.env`, the script will prompt for the token interactively.
+Edit the `.env` file and replace `xoxp-your-token-here` with your actual Slack token.
 
-### VS Code Workflow (Recommended)
-1. Open the cloned folder in VS Code: `code slackex` (or File → Open Folder)
-2. Install the Python extension if not already installed
-3. VS Code will likely prompt to create a virtual environment - accept this
-4. Open the integrated terminal (Terminal → New Terminal)
-5. Install dependencies: `pip install -r requirements.txt`
-6. Copy `.env.example` to `.env` and add your Slack token
-7. Run scripts directly from the terminal or use the Python extension's run buttons
+#### 5. Run Scripts
+**Option A: From VS Code terminal**
+
+```bash
+python slack_export.py
+python generate_md.py
+```
+
+**Option B: Using VS Code Python extension**
+- Right-click on `slack_export.py` → "Run Python File in Terminal"
+- Or use the ▶️ play button in the top-right when viewing a .py file
 
 ---
 ## 3. Run the Exporter
@@ -214,15 +243,8 @@ A: Yes—re-running simply re-fetches; you could adapt the code to skip JSONs th
 A: The exporter skips deleted users for new DM discovery but will retain messages already present in channels.
 
 ---
-## 10. Minimal Command Reference
+## 10. Command Reference
 ```bash
-# Clone repository
-git clone <repository-url>
-cd slackex
-
-# Install deps
-pip install -r requirements.txt
-
 # Run export (uses .env if present)
 python slack_export.py
 
