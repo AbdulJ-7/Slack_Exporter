@@ -62,26 +62,18 @@ markdown/
 
 ### Setup Steps
 
-#### 1. Clone Repository
-**Windows (Command Prompt/PowerShell):**
-```cmd
-git clone https://github.com/AbdulJ-7/Slack_Exporter.git
-cd Slack_Exporter
-code .
-```
-
-**Mac/Linux (Terminal):**
-```bash
-git clone https://github.com/AbdulJ-7/Slack_Exporter.git
-cd Slack_Exporter
-code .
-```
+#### 1. Open VS Code & Clone Repository
+1. Open VS Code
+2. Press `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (Mac) to open the Command Palette
+3. Type `Git: Clone` and select it
+4. Enter the repository URL: `https://github.com/AbdulJ-7/Slack_Exporter.git`
+5. Select a folder on your computer to save the project
+6. When prompted, click "Open" to open the cloned repository
 
 #### 2. VS Code Setup
-1. VS Code will open the project folder
-2. Install the **Python extension** if prompted (or from Extensions marketplace)
-3. VS Code may prompt to create a virtual environment - **accept this recommendation**
-4. Open the **integrated terminal** (Terminal → New Terminal or `` Ctrl+` ``)
+1. Install the **Python extension** if prompted (or from Extensions marketplace)
+2. VS Code may prompt to create a virtual environment - **accept this recommendation**
+3. Open the **integrated terminal** by clicking Terminal → New Terminal or pressing `` Ctrl+` `` (backtick)
 
 #### 3. Install Dependencies
 **In VS Code terminal:**
@@ -90,33 +82,28 @@ pip install -r requirements.txt
 ```
 
 #### 4. Configure Environment
-**Windows (in VS Code terminal):**
-```cmd
-copy .env.example .env
-notepad .env
-```
-
-**Mac/Linux (in VS Code terminal):**
-```bash
-cp .env.example .env
-open .env    # Mac
-# or
-nano .env    # Linux
-```
-
-Edit the `.env` file and replace `xoxp-your-token-here` with your actual Slack token.
+1. In VS Code's Explorer panel (left sidebar), find `.env.example`
+2. Right-click on `.env.example` and select "Copy"
+3. Right-click in the same folder and select "Paste"
+4. When prompted, rename the file to `.env`
+5. Double-click on the new `.env` file to open it
+6. Replace `xoxp-your-token-here` with your actual Slack token from Step 1
+7. Save the file (`Ctrl+S` or `Cmd+S`)
 
 #### 5. Run Scripts
-**Option A: From VS Code terminal**
+**Option A: Using VS Code's Run Button** (easiest for beginners)
+1. Open `slack_export.py` by clicking on it in the Explorer panel
+2. Click the ▶️ play button in the top-right corner of the VS Code window
+3. After the export completes, open `generate_md.py`
+4. Click the ▶️ play button again to generate markdown files
 
-```bash
-python slack_export.py
-python generate_md.py
-```
-
-**Option B: Using VS Code Python extension**
-- Right-click on `slack_export.py` → "Run Python File in Terminal"
-- Or use the ▶️ play button in the top-right when viewing a .py file
+**Option B: Using VS Code terminal**
+1. Make sure the terminal is open at the bottom of VS Code (if not, press `` Ctrl+` ``)
+2. Type the following commands:
+   ```bash
+   python slack_export.py
+   python generate_md.py
+   ```
 
 ---
 ## 3. Run the Exporter
