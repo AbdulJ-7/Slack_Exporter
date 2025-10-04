@@ -47,29 +47,32 @@ You'll need to install three things (if you don't have them already):
 ### Step 3: Download and Set Up the Tool (Copy & Paste Commands)
 
 1. Open VS Code
-2. Press <kbd>Ctrl+`</kbd> (backtick - the key above Tab) to open the terminal
-3. Copy and paste this command to download the tool:
+2. Click on `File` > `Open Folder` (or press <kbd>Ctrl+K Ctrl+O</kbd>)
+3. Press <kbd>Ctrl+Shift+N</kbd> on Windows (or <kbd>Cmd+Shift+N</kbd> on Mac) to create a new folder
+4. Name the folder `Slack_Exporter` and click "Select Folder" on Windows or "Open" on Mac
+5. Press <kbd>Ctrl+`</kbd> (backtick - the key above Tab) to open the terminal
+6. Copy and paste this command to download the tool:
    ```
-   git clone https://github.com/AbdulJ-7/Slack_Exporter.git && cd Slack_Exporter/
+   git clone https://github.com/AbdulJ-7/Slack_Exporter.git . && cd Slack_Exporter
    ```
 
-4. Copy and paste this command to create the configuration file:
+7. Copy and paste this command to create the configuration file:
    ```
    code .env
    ```
    
-5. In the editor that opens, paste the following and replace `YOUR_TOKEN_HERE` with your Slack token from Step 2:
+8. In the editor that opens, paste the following and replace `YOUR_TOKEN_HERE` with your Slack token from Step 2:
    ```
    # Slack User OAuth Token (starts with xoxp-)
    SLACK_TOKEN=YOUR_TOKEN_HERE
    ```
 
-6. Save the file by pressing <kbd>Ctrl+S</kbd> (or <kbd>Cmd+S</kbd> on Mac)
+9. Save the file by pressing <kbd>Ctrl+S</kbd> (or <kbd>Cmd+S</kbd> on Mac)
 
-7. Copy and paste this command to install required packages:
-   ```
-   pip install -r requirements.txt
-   ```
+10. Copy and paste this command to install required packages:
+    ```
+    pip install -r requirements.txt
+    ```
 
 ### Step 4: Export Your Slack Messages
 
