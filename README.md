@@ -1,12 +1,6 @@
-# SExExport every accessible message from a Slack workspace (channels, private channels if you're a member, multi‑party DMs, one‑to‑one DMs — including those not currently visible in your sidebar) and optionally convert the resulting JSON into clean, date‑grouped Markdown transcripts.
+# Slack Complete Export & Markdown Transcript Toolkit
 
----
-## 🗂 Directory Layout (After Running Both Steps)essible message from a Slack workspace (channels, private channels if you're a member, multi‑party DMs, one‑to‑one DMs — including those not currently visible in your sidebar) and optionally convert the resulting JSON into clean, date‑grouped Markdown transcripts.
-
---- Export & Markdown Transcript Toolkit
-
-Export every accessible message from a Slack workspace (channels, private channels if you're a [00:55:33] Bob: Hi Alice
-```ber, multi‑party DMs, one‑to‑one DMs — including those not currently visible in your sidebar) and optionally convert the resulting JSON into clean, date‑grouped Markdown transcripts.
+Export every accessible message from a Slack workspace (channels, private channels if you're a member, multi‑party DMs, one‑to‑one DMs — including those not currently visible in your sidebar) and optionally convert the resulting JSON into clean, date‑grouped Markdown transcripts.
 
 ---
 ## ✨ Features
@@ -43,7 +37,7 @@ markdown/
 ## 1. Create a Slack App & Get a User Token
 1. Go to https://api.slack.com/apps → Create New App → From scratch
 2. Name it something like: `PersonalExport` and pick your workspace
-3. In the sidebar: OAuth & Permissions → User Token Scopes → Add:
+3. In the sidebar: OAuth & Permissions → Scroll down to User Token Scopes → Add:
    - `channels:history`
    - `channels:read`
    - `groups:history`
