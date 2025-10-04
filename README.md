@@ -50,7 +50,7 @@ You'll need to install three things (if you don't have them already):
 2. Press <kbd>Ctrl+`</kbd> (backtick - the key above Tab) to open the terminal
 3. Copy and paste this command to download the tool:
    ```
-   git clone https://github.com/AbdulJ-7/Slack_Exporter.git && cd Slack_Exporter/slackex
+   git clone https://github.com/AbdulJ-7/Slack_Exporter.git && cd Slack_Exporter/
    ```
 
 4. Copy and paste this command to create the configuration file:
