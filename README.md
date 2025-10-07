@@ -56,10 +56,17 @@ You'll need to install three things (if you don't have them already):
    git clone https://github.com/AbdulJ-7/Slack_Exporter.git . && cd Slack_Exporter
    ```
 
-7. Copy and paste this command to create the configuration file:
+7. Create a configuration file:
+
+   **For Windows:**
    ```
    code .env
    ```
+   
+   **For Mac:** (if the command above doesn't work)
+   - Click `File` > `New File`
+   - Click `File` > `Save` (or press <kbd>Cmd+S</kbd>)
+   - Name the file `.env` (including the dot) and save it in the current folder
    
 8. In the editor that opens, paste the following and replace `YOUR_TOKEN_HERE` with your Slack token from Step 2:
    ```
